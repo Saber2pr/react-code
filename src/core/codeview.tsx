@@ -32,13 +32,10 @@ const prestyle: CSSProperties = {
 }
 /**
  * Code
+ *
+ * text \`\`\`ts\/** you code *\/\`\`\` text
+ *
  * @export
- * @param {Code} {
- *   content,
- *   start = '```ts\n',
- *   end = '```',
- *   keywords
- * }
  * @returns
  */
 export const Code = ({

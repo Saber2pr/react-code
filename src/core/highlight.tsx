@@ -46,11 +46,14 @@ const transformComment = (array: JSX.Element[]) =>
     const target = element.props && element.props['children']
     const trans = (comment: string) => {
       const res = target.split(comment)
+      const checkColor = (str: string) => ({
+        color: str.includes('/*') ? '#999999' : 'white'
+      })
       return (
         <React.Fragment key={target + index}>
-          {res[0] && <span>{res[0]}</span>}
+          {res[0] && <span style={checkColor(res[0])}>{res[0]}</span>}
           <span style={{ color: '#999999' }}>{comment}</span>
-          {res[1] && <span>{res[1]}</span>}
+          {res[1] && <span style={checkColor(res[1])}>{res[1]}</span>}
         </React.Fragment>
       )
     }
