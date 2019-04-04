@@ -4,7 +4,7 @@
  * @Last Modified by: saber2pr
  * @Last Modified time: 2019-04-04 18:07:34
  */
-import React, { Props } from 'react'
+import React, { Props, Fragment } from 'react'
 import { KeyWords } from './keywords'
 import { findKeys } from './utils/findKeys'
 
@@ -24,42 +24,41 @@ export const HighLight = ({ content, keywords }: HighLight) => {
     .split(new RegExp(keywords.map(keyword => keyword.word).join('|')))
     .reduce<JSX.Element[]>(
       (out, val, index) =>
-        finded[index]
-          ? out.concat(
-              val && <span key={`jssjy4fpsfemmey5tor${index}`}>{val}</span>,
-              <span
-                style={{ color: findColor(index) }}
-                key={`jssjyad2o7ym9vuerr${index}`}
-              >
-                {finded[index].type}
-              </span>
-            )
-          : out.concat(<span key={`jssjyjafaimd4jkph76${index}`}>{val}</span>),
+        out.concat(
+          <Fragment key={`jssjy4fpsfemmey5tor${index}`}>{val}</Fragment>,
+          finded[index] && (
+            <span
+              style={{ color: findColor(index) }}
+              key={`jssjyad2o7ym9vuerr${index}`}
+            >
+              {finded[index].type}
+            </span>
+          )
+        ),
       []
     )
   const markedComment = transformComment(
-    transformComment(highlighted, '//', comment_single),
-    '/*',
+    transformComment(highlighted, comment_single),
     comment_more
   )
   return <>{markedComment}</>
 }
 
-const transformComment = (array: JSX.Element[], test: string, RegExp: RegExp) =>
+const transformComment = (array: JSX.Element[], RegExp: RegExp) =>
   array.map((element, index) => {
-    const target = element.props && element.props['children']
+    const target = element && element.props && element.props['children']
     const trans = (comment: string) => {
       const res = target.split(comment)
       return (
         <React.Fragment key={target + index}>
-          <span>{res[0]}</span>
+          {res[0]}
           <span style={{ color: '#999999' }}>{comment}</span>
-          <span>{res[1]}</span>
+          {res[1]}
         </React.Fragment>
       )
     }
     if (typeof target === 'string') {
-      if (target.includes(test)) {
+      if (RegExp.test(target)) {
         const comment = target.match(RegExp)
         if (comment) return trans(comment[0])
       }
