@@ -119,5 +119,33 @@ export const KEYWORDS: KeyWords = [
   {
     word: 'this',
     color: '#bb75b2'
+  },
+  {
+    word: 'declare',
+    color: '#bb75b2'
+  },
+  {
+    word: 'global',
+    color: '#bb75b2'
+  },
+  {
+    word: 'string',
+    color: '#bb75b2'
+  },
+  {
+    word: 'number',
+    color: '#bb75b2'
+  },
+  {
+    word: 'Object',
+    color: '#bb75b2'
+  },
+  {
+    word: 'boolean',
+    color: '#bb75b2'
+  },
+  {
+    word: 'window',
+    color: '#bb75b2'
   }
 ]

@@ -14,13 +14,13 @@ export interface HighLight extends Props<any> {
 }
 
 const comment_single = new RegExp('//[\\s\\S]*?\\n')
-const comment_more = /(\/\/.*$)|(\/\*(.|\s)*?\*\/)/g
+const comment_more = /(\/\/.*$)|(\/\*(.|\s)*?\*\/)/
 
 export const HighLight = ({ content, keywords }: HighLight) => {
   const finded = findKeys(content, keywords.map(k => k.word))
   const findColor = (index: number) =>
     keywords.find(keyword => keyword.word === finded[index].type).color
-  const array = content
+  const highlighted = content
     .split(new RegExp(keywords.map(keyword => keyword.word).join('|')))
     .reduce<JSX.Element[]>(
       (out, val, index) =>
@@ -37,31 +37,31 @@ export const HighLight = ({ content, keywords }: HighLight) => {
           : out.concat(<span key={`jssjyjafaimd4jkph76${index}`}>{val}</span>),
       []
     )
-
-  return <>{transformComment(array)}</>
+  const markedComment = transformComment(
+    transformComment(highlighted, '//', comment_single),
+    '/*',
+    comment_more
+  )
+  return <>{markedComment}</>
 }
 
-const transformComment = (array: JSX.Element[]) =>
+const transformComment = (array: JSX.Element[], test: string, RegExp: RegExp) =>
   array.map((element, index) => {
     const target = element.props && element.props['children']
     const trans = (comment: string) => {
       const res = target.split(comment)
-      const checkColor = (str: string) => ({
-        color: str.includes('/*') ? '#999999' : 'white'
-      })
       return (
         <React.Fragment key={target + index}>
-          {res[0] && <span style={checkColor(res[0])}>{res[0]}</span>}
+          <span>{res[0]}</span>
           <span style={{ color: '#999999' }}>{comment}</span>
-          {res[1] && <span style={checkColor(res[1])}>{res[1]}</span>}
+          <span>{res[1]}</span>
         </React.Fragment>
       )
     }
     if (typeof target === 'string') {
-      if (target.includes('//')) {
-        return trans(target.match(comment_single)[0])
-      } else if (target.includes('/*')) {
-        return trans(target.match(comment_more)[0])
+      if (target.includes(test)) {
+        const comment = target.match(RegExp)
+        if (comment) return trans(comment[0])
       }
     }
     return element
