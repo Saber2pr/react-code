@@ -1,5 +1,7 @@
 # @saber2pr/react-code
 
+[![npm](https://img.shields.io/npm/v/@saber2pr/react-code.svg?color=blue)](https://www.npmjs.com/package/@saber2pr/react-code)
+
 > a code text component for react!
 
 ```bash

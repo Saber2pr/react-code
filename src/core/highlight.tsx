@@ -43,7 +43,7 @@ export const HighLight = ({ content, keywords }: HighLight) => {
 
 const transformComment = (array: JSX.Element[]) =>
   array.map((element, index) => {
-    const target = element.props['children']
+    const target = element.props && element.props['children']
     const trans = (comment: string) => {
       const res = target.split(comment)
       return (
