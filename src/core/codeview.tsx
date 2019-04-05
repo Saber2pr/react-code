@@ -11,7 +11,7 @@ import { KeyWords, KEYWORDS } from './keywords'
 import { dedup } from './utils/dedup'
 
 export interface Code {
-  children: string
+  children?: string
   start?: string
   end?: string
   keywords?: KeyWords
@@ -39,7 +39,7 @@ const prestyle: CSSProperties = {
  * @returns
  */
 export const Code = ({
-  children,
+  children = '',
   start = '```ts\n',
   end = '```',
   keywords = KEYWORDS

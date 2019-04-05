@@ -12,7 +12,7 @@ export interface Editable {
   height?: string
   onSave?: (content: string) => void
   status?: 'edit' | 'view'
-  children: string
+  children?: string
 }
 
 export const Editable = ({
@@ -20,7 +20,7 @@ export const Editable = ({
   height = '100px',
   onSave,
   status = 'view',
-  children
+  children = ''
 }: Editable) => {
   const [state_content, setState_content] = useState<'edit' | 'view'>(status)
   const text_ref = useRef(null)

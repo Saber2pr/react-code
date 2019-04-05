@@ -9,14 +9,14 @@ import { KeyWords } from './keywords'
 import { findKeys } from './utils/findKeys'
 
 export interface HighLight extends Props<any> {
-  children: string
+  children?: string
   keywords: KeyWords
 }
 
 const comment_single = new RegExp('//[\\s\\S]*?\\n')
 const comment_more = /(\/\/.*$)|(\/\*(.|\s)*?\*\/)/
 
-export const HighLight = ({ children, keywords }: HighLight) => {
+export const HighLight = ({ children = '', keywords }: HighLight) => {
   const finded = findKeys(children, keywords.map(k => k.word))
   const findColor = (index: number) =>
     keywords.find(keyword => keyword.word === finded[index].type).color

@@ -147,5 +147,13 @@ export const KEYWORDS: KeyWords = [
   {
     word: 'window',
     color: '#79b6f2'
+  },
+  {
+    word: 'null',
+    color: '#79b6f2'
+  },
+  {
+    word: 'undefined',
+    color: '#79b6f2'
   }
 ]
