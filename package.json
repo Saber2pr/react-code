@@ -1,6 +1,6 @@
 {
   "name": "@saber2pr/react-code",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "a code text component for react!",
   "repository": {
     "type": "git",
@@ -24,16 +24,14 @@
     "dev": "rollup -c --watch"
   },
   "devDependencies": {
-    "typescript": "^3.2.1",
-    "rollup": "^1.1.2",
-    "rollup-plugin-commonjs": "^9.2.0",
-    "rollup-plugin-node-resolve": "^4.0.0"
-  },
-  "dependencies": {
     "@types/react": "^16.8.12",
     "@types/react-dom": "^16.8.3",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "react-dom": "^16.8.6",
+    "rollup": "^1.1.2",
+    "rollup-plugin-commonjs": "^9.2.0",
+    "rollup-plugin-node-resolve": "^4.0.0",
+    "typescript": "^3.2.1"
   },
   "peerDependencies": {
     "@types/react": "^16.8.12",
