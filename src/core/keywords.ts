@@ -85,10 +85,6 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'constructor',
-    color: '#bb75b2'
-  },
-  {
     word: ':',
     color: '#bb75b2'
   },
@@ -106,10 +102,6 @@ export const KEYWORDS: KeyWords = [
   },
   {
     word: 'while',
-    color: '#bb75b2'
-  },
-  {
-    word: 'type',
     color: '#bb75b2'
   },
   {
