@@ -118,7 +118,7 @@ export const KEYWORDS: KeyWords = [
   },
   {
     word: 'this',
-    color: '#bb75b2'
+    color: '#79b6f2'
   },
   {
     word: 'declare',
@@ -126,15 +126,15 @@ export const KEYWORDS: KeyWords = [
   },
   {
     word: 'global',
-    color: '#bb75b2'
+    color: '#79b6f2'
   },
   {
     word: 'string',
-    color: '#bb75b2'
+    color: '#79b6f2'
   },
   {
     word: 'number',
-    color: '#bb75b2'
+    color: '#79b6f2'
   },
   {
     word: 'Object',
@@ -142,10 +142,10 @@ export const KEYWORDS: KeyWords = [
   },
   {
     word: 'boolean',
-    color: '#bb75b2'
+    color: '#79b6f2'
   },
   {
     word: 'window',
-    color: '#bb75b2'
+    color: '#79b6f2'
   }
 ]

@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
 
+import { Editable } from '../core/editable'
 import { Code } from '../core/codeview'
 
 const code = `
@@ -17,12 +18,19 @@ declare global {
     test:string // 添加属性
   }
 }
+
+this
 \`\`\`
 上面是代码`
 
-ReactDOM.render(
-  <div>
-    <Code content={code} />
-  </div>,
-  document.getElementById('root')
-)
+const App = () => {
+  const [state, setState] = useState(code)
+  return (
+    <>
+      <Code>{state}</Code>
+      <Editable onSave={setState}>{state}</Editable>
+    </>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))

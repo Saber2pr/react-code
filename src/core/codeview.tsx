@@ -4,14 +4,14 @@
  * @Last Modified by: saber2pr
  * @Last Modified time: 2019-04-04 18:02:52
  */
-import React, { CSSProperties } from 'react'
+import React, { CSSProperties, Fragment } from 'react'
 import { Para } from './paragraph'
 import { HighLight } from './highlight'
 import { KeyWords, KEYWORDS } from './keywords'
 import { dedup } from './utils/dedup'
 
 export interface Code {
-  content: string
+  children: string
   start?: string
   end?: string
   keywords?: KeyWords
@@ -39,7 +39,7 @@ const prestyle: CSSProperties = {
  * @returns
  */
 export const Code = ({
-  content,
+  children,
   start = '```ts\n',
   end = '```',
   keywords = KEYWORDS
@@ -47,16 +47,16 @@ export const Code = ({
   const $keywords = dedup(keywords, 'word')
   return (
     <>
-      {content.split(start).map((c, index) => {
+      {children.split(start).map((c, index) => {
         if (c.includes(end)) {
           const result = c.split(end)
           return (
-            <React.Fragment key={'ju2wa8owexjvxhn26h' + index}>
+            <Fragment key={'ju2wa8owexjvxhn26h' + index}>
               <pre style={prestyle}>
-                <HighLight content={result[0]} keywords={$keywords} />
+                <HighLight keywords={$keywords}>{result[0]}</HighLight>
               </pre>
               <Para content={result[1]} style={pstyle} />
-            </React.Fragment>
+            </Fragment>
           )
         } else {
           return (

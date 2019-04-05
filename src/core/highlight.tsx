@@ -9,18 +9,18 @@ import { KeyWords } from './keywords'
 import { findKeys } from './utils/findKeys'
 
 export interface HighLight extends Props<any> {
-  content: string
+  children: string
   keywords: KeyWords
 }
 
 const comment_single = new RegExp('//[\\s\\S]*?\\n')
 const comment_more = /(\/\/.*$)|(\/\*(.|\s)*?\*\/)/
 
-export const HighLight = ({ content, keywords }: HighLight) => {
-  const finded = findKeys(content, keywords.map(k => k.word))
+export const HighLight = ({ children, keywords }: HighLight) => {
+  const finded = findKeys(children, keywords.map(k => k.word))
   const findColor = (index: number) =>
     keywords.find(keyword => keyword.word === finded[index].type).color
-  const highlighted = content
+  const highlighted = children
     .split(new RegExp(keywords.map(keyword => keyword.word).join('|')))
     .reduce<JSX.Element[]>(
       (out, val, index) =>
@@ -50,11 +50,11 @@ const transformComment = (array: JSX.Element[], RegExp: RegExp) =>
     const trans = (comment: string) => {
       const res = target.split(comment)
       return (
-        <React.Fragment key={target + index}>
+        <Fragment key={target + index}>
           {res[0]}
           <span style={{ color: '#999999' }}>{comment}</span>
           {res[1]}
-        </React.Fragment>
+        </Fragment>
       )
     }
     if (typeof target === 'string') {
