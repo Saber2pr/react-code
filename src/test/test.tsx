@@ -189,12 +189,31 @@ const MyKeywords = [
   }
 ]
 
+const test = `  
+qqq
+
+_start
+
+{
+  word: 'constructor',
+  color: '#bb75b2'
+}
+]
+
+hello
+
+_end
+
+qqqq`
+
 const App = () => {
-  const [state, setState] = useState(code)
+  const [state, setState] = useState(test)
   return (
     <>
-      <Code keywords={MyKeywords}>{state}</Code>
-      <Editable onSave={setState}>{state}</Editable>
+      <Code keywords={MyKeywords}>{code}</Code>
+      <Editable onSave={setState} start={'_start'} end={'_end'}>
+        {state}
+      </Editable>
     </>
   )
 }

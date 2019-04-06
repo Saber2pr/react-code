@@ -74,8 +74,10 @@ ReactDOM.render(<App />, document.getElementById('root'))
 
 # 自定义关键字
 
+使用或扩展已经定义的关键字
+
 ```tsx
-type ColorWord = {
+export type ColorWord = {
   word: string
   color: string
 }
@@ -93,6 +95,8 @@ const MyKeywords = [
     color: '#bb75b2'
   }
 ]
+
+<Code keywords={MyKeywords}>{/* 含有代码的文本 */}</Code>
 ```
 
 ---

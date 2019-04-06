@@ -7,12 +7,11 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Code } from './codeview'
 
-export interface Editable {
+export interface Editable extends Code {
   width?: string
   height?: string
   onSave?: (content: string) => void
   status?: 'edit' | 'view'
-  children?: string
 }
 
 export const Editable = ({
@@ -20,7 +19,10 @@ export const Editable = ({
   height = '100px',
   onSave,
   status = 'view',
-  children = ''
+  children = '',
+  start,
+  end,
+  keywords
 }: Editable) => {
   const [state_content, setState_content] = useState<'edit' | 'view'>(status)
   const text_ref = useRef(null)
@@ -32,7 +34,9 @@ export const Editable = ({
     case 'view':
       return (
         <>
-          <Code>{children}</Code>
+          <Code keywords={keywords} start={start} end={end}>
+            {children}
+          </Code>
           <div>
             <button onClick={() => setState_content('edit')}>编辑</button>
           </div>
