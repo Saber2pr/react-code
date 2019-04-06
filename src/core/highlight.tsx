@@ -2,13 +2,13 @@
  * @Author: saber2pr
  * @Date: 2019-03-02 13:38:59
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-06 09:26:00
+ * @Last Modified time: 2019-04-06 09:46:37
  */
 import React, { Props, Fragment } from 'react'
 import { KeyWords } from './keywords'
 import { findKeys } from './utils/findKeys'
 import { childStr } from './utils/childStr'
-import { Execption } from './utils/error'
+import { ExecptionHadChildStr } from './utils/error'
 
 export interface HighLight extends Props<any> {
   children?: string
@@ -22,7 +22,7 @@ export const HighLight = ({ children = '', keywords }: HighLight) => {
   try {
     const test = childStr(keywords.map(k => k.word))
     if (test) {
-      throw Execption(`keywords had childstr:[${test}]`)
+      throw ExecptionHadChildStr(test)
     }
   } catch (error) {
     throw error

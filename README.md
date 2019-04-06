@@ -72,6 +72,35 @@ ReactDOM.render(<App />, document.getElementById('root'))
 3. onSave 保存事件回调
 4. status 初始化状态 'edit' 或者 'view'
 
+# 自定义关键字
+
+```tsx
+type ColorWord = {
+  word: string
+  color: string
+}
+
+export type KeyWords = ColorWord[]
+
+// 本项目已经定义的关键字
+import { KEYWORDS } from '@saber2pr/react-code'
+
+// 可以在已有基础上扩展
+const MyKeywords = [
+  ...KEYWORDS,
+  {
+    word: 'hello',
+    color: '#bb75b2'
+  }
+]
+```
+
+---
+
+# Errors
+
+[Errors](https://github.com/Saber2pr/saber-react-code/blob/master/docs/error.md#errors)
+
 ---
 
 ## start

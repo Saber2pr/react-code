@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 
 import { Editable } from '../core/editable'
 import { Code } from '../core/codeview'
+import { KEYWORDS } from '../core/keywords'
 
 const code = `
 下面是代码
@@ -11,7 +12,7 @@ const code = `
  * @Author: saber2pr
  * @Date: 2019-04-04 16:19:11
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-06 09:39:07
+ * @Last Modified time: 2019-04-06 09:59:57
  */
 export type ColorWord = {
   word: string
@@ -175,14 +176,24 @@ export const KEYWORDS: KeyWords = [
   }
 ]
 
+hello
+
 \`\`\`
 上面是代码`
+
+const MyKeywords = [
+  ...KEYWORDS,
+  {
+    word: 'hello',
+    color: '#bb75b2'
+  }
+]
 
 const App = () => {
   const [state, setState] = useState(code)
   return (
     <>
-      <Code>{state}</Code>
+      <Code keywords={MyKeywords}>{state}</Code>
       <Editable onSave={setState}>{state}</Editable>
     </>
   )

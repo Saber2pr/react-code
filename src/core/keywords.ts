@@ -2,7 +2,7 @@
  * @Author: saber2pr
  * @Date: 2019-04-04 16:19:11
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-06 09:39:07
+ * @Last Modified time: 2019-04-06 10:00:31
  */
 export type ColorWord = {
   word: string
