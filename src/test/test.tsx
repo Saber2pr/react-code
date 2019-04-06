@@ -9,10 +9,10 @@ const code = `
 下面是代码
 \`\`\`ts
 /*
- * @Author: saber2pr
- * @Date: 2019-04-04 16:19:11
- * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-06 09:59:57
+ * @Author saber2pr
+ * @Date 2019-04-04 161911
+ * @Last Modified by saber2pr
+ * @Last Modified time 2019-04-06 100031
  */
 export type ColorWord = {
   word: string
@@ -63,7 +63,7 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'if',
+    word: 'if ',
     color: '#bb75b2'
   },
   {
@@ -139,19 +139,39 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'string',
+    word: ' string',
     color: '#79b6f2'
   },
   {
-    word: 'number',
+    word: ' number',
     color: '#79b6f2'
   },
   {
-    word: 'Object',
-    color: '#bb75b2'
+    word: ' Object',
+    color: '#ddca74'
   },
   {
-    word: 'boolean',
+    word: ' Array',
+    color: '#ddca74'
+  },
+  {
+    word: ' String',
+    color: '#ddca74'
+  },
+  {
+    word: ' Boolean',
+    color: '#ddca74'
+  },
+  {
+    word: ' Number',
+    color: '#ddca74'
+  },
+  {
+    word: ' object',
+    color: '#79b6f2'
+  },
+  {
+    word: ' boolean',
     color: '#79b6f2'
   },
   {
@@ -159,7 +179,7 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'null',
+    word: 'null ',
     color: '#79b6f2'
   },
   {
@@ -168,13 +188,35 @@ export const KEYWORDS: KeyWords = [
   },
   {
     word: 'delete',
-    color: '#79b6f2'
+    color: '#bb75b2'
   },
   {
     word: 'constructor',
     color: '#bb75b2'
+  },
+  {
+    word: ' in ',
+    color: '#bb75b2'
+  },
+  {
+    word: 'try ',
+    color: '#bb75b2'
+  },
+  {
+    word: 'throw ',
+    color: '#bb75b2'
+  },
+  {
+    word: ' false',
+    color: '#79b6f2'
+  },
+  {
+    word: ' true',
+    color: '#79b6f2'
   }
 ]
+
+
 
 hello
 
