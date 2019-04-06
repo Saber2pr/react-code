@@ -11,7 +11,7 @@ const code = `
  * @Author: saber2pr
  * @Date: 2019-04-04 16:19:11
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-04 17:49:32
+ * @Last Modified time: 2019-04-06 09:39:07
  */
 export type ColorWord = {
   word: string
@@ -22,23 +22,27 @@ export type KeyWords = ColorWord[]
 
 export const KEYWORDS: KeyWords = [
   {
-    word: 'const',
+    word: 'const ',
     color: '#bb75b2'
   },
   {
-    word: 'let',
+    word: 'let ',
     color: '#bb75b2'
   },
   {
-    word: 'export',
+    word: 'var ',
     color: '#bb75b2'
   },
   {
-    word: 'import',
+    word: 'export ',
     color: '#bb75b2'
   },
   {
-    word: 'from',
+    word: 'import ',
+    color: '#bb75b2'
+  },
+  {
+    word: 'from ',
     color: '#bb75b2'
   },
   {
@@ -46,7 +50,7 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'document',
+    word: 'document ',
     color: '#bb75b2'
   },
   {
@@ -54,7 +58,7 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'new',
+    word: 'new ',
     color: '#bb75b2'
   },
   {
@@ -74,7 +78,7 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'default',
+    word: 'default ',
     color: '#bb75b2'
   },
   {
@@ -82,19 +86,15 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'extends',
+    word: 'extends ',
     color: '#bb75b2'
   },
   {
-    word: 'interface',
+    word: 'interface ',
     color: '#bb75b2'
   },
   {
-    word: 'class',
-    color: '#bb75b2'
-  },
-  {
-    word: 'constructor',
+    word: 'class ',
     color: '#bb75b2'
   },
   {
@@ -118,7 +118,11 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'typeof',
+    word: 'typeof ',
+    color: '#bb75b2'
+  },
+  {
+    word: 'type ',
     color: '#bb75b2'
   },
   {
@@ -126,11 +130,11 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'declare',
+    word: 'declare ',
     color: '#bb75b2'
   },
   {
-    word: 'global',
+    word: 'global ',
     color: '#79b6f2'
   },
   {
@@ -160,6 +164,14 @@ export const KEYWORDS: KeyWords = [
   {
     word: 'undefined',
     color: '#79b6f2'
+  },
+  {
+    word: 'delete',
+    color: '#79b6f2'
+  },
+  {
+    word: 'constructor',
+    color: '#bb75b2'
   }
 ]
 
