@@ -169,7 +169,7 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'null ',
+    word: ' null ',
     color: '#79b6f2'
   },
   {
@@ -177,7 +177,7 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'delete',
+    word: 'delete ',
     color: '#bb75b2'
   },
   {
@@ -189,11 +189,11 @@ export const KEYWORDS: KeyWords = [
     color: '#bb75b2'
   },
   {
-    word: 'try ',
+    word: ' try ',
     color: '#bb75b2'
   },
   {
-    word: 'throw ',
+    word: ' throw ',
     color: '#bb75b2'
   },
   {
@@ -205,23 +205,23 @@ export const KEYWORDS: KeyWords = [
     color: '#79b6f2'
   },
   {
-    word: 'public ',
+    word: ' public ',
     color: '#bb75b2'
   },
   {
-    word: 'private ',
+    word: ' private ',
     color: '#bb75b2'
   },
   {
-    word: 'protected ',
+    word: ' protected ',
     color: '#bb75b2'
   },
   {
-    word: 'get ',
+    word: ' get ',
     color: '#bb75b2'
   },
   {
-    word: 'set ',
+    word: ' set ',
     color: '#bb75b2'
   }
 ]
