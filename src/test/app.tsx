@@ -1,8 +1,18 @@
+import React, { useState } from 'react'
+import ReactDOM from 'react-dom'
+
+import { Editable } from '../core/editable'
+import { Code } from '../core/codeview'
+import { KEYWORDS } from '../core/keywords'
+
+const code = `
+下面是代码
+\`\`\`ts
 /*
- * @Author: saber2pr
- * @Date: 2019-04-04 16:19:11
- * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-07 13:47:31
+ * @Author saber2pr
+ * @Date 2019-04-04 161911
+ * @Last Modified by saber2pr
+ * @Last Modified time 2019-04-06 100031
  */
 export type ColorWord = {
   word: string
@@ -203,25 +213,51 @@ export const KEYWORDS: KeyWords = [
   {
     word: ' true',
     color: '#79b6f2'
-  },
+  }
+]
+
+
+
+hello
+
+\`\`\`
+上面是代码`
+
+const MyKeywords = [
+  ...KEYWORDS,
   {
-    word: 'public ',
-    color: '#bb75b2'
-  },
-  {
-    word: 'private ',
-    color: '#bb75b2'
-  },
-  {
-    word: 'protected ',
-    color: '#bb75b2'
-  },
-  {
-    word: 'get ',
-    color: '#bb75b2'
-  },
-  {
-    word: 'set ',
+    word: 'hello',
     color: '#bb75b2'
   }
 ]
+
+const test = `  
+qqq
+
+_start
+
+{
+  word: 'constructor',
+  color: '#bb75b2'
+}
+]
+
+hello
+
+_end
+
+qqqq`
+
+const App = () => {
+  const [state, setState] = useState(test)
+  return (
+    <>
+      <Code keywords={MyKeywords}>{code}</Code>
+      <Editable onSave={setState} start={'_start'} end={'_end'}>
+        {state}
+      </Editable>
+    </>
+  )
+}
+
+ReactDOM.render(<App />, document.getElementById('root'))

@@ -2,13 +2,12 @@
  * @Author: saber2pr
  * @Date: 2019-03-02 13:38:59
  * @Last Modified by: saber2pr
- * @Last Modified time: 2019-04-06 09:46:37
+ * @Last Modified time: 2019-04-07 13:46:02
  */
 import React, { Props, Fragment } from 'react'
 import { KeyWords } from './keywords'
 import { findKeys } from './utils/findKeys'
-import { childStr } from './utils/childStr'
-import { ExecptionHadChildStr } from './utils/error'
+import { v_keywords } from './utils/validators'
 
 export interface HighLight extends Props<any> {
   children?: string
@@ -20,12 +19,9 @@ const comment_more = /(\/\/.*$)|(\/\*(.|\s)*?\*\/)/
 
 export const HighLight = ({ children = '', keywords }: HighLight) => {
   try {
-    const test = childStr(keywords.map(k => k.word))
-    if (test) {
-      throw ExecptionHadChildStr(test)
-    }
+    v_keywords(keywords)
   } catch (error) {
-    throw error
+    console.log(error)
   }
   const finded = findKeys(children, keywords.map(k => k.word))
   const findColor = (index: number) =>
