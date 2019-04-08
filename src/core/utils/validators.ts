@@ -11,7 +11,7 @@ import { Execption } from './error'
 export const v_keywords = (keywords: KeyWords) => {
   const test = childStr(keywords.map(k => k.word))
   if (test) {
-    throw Execption(
+    Execption(
       `keywords had childstr:[${test}]`,
       'https://github.com/Saber2pr/saber-react-code/blob/master/docs/error.md#keywords-had-childstrxxx'
     )

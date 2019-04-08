@@ -7,5 +7,6 @@
 const help = (href: string) =>
   `please visit: [ ${href} ] for more informations.`
 
-export const Execption = (message: string, href: string) =>
-  new Error(message + `\n${help(href)}`)
+export const Execption = (message: string, href: string) => {
+  throw new Error(message + `\n${help(href)}`)
+}
